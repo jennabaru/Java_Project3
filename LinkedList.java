@@ -219,6 +219,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
                 } else {
                     prev.next = current.next;
                 }
+                size = size - 1;
                 return true;
             }
             prev = current;
