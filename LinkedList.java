@@ -25,7 +25,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
     private class Node<E>{
         //item field, next, prev
         private E item;
-        Node<E> next;
+        private Node<E> next;
 
         Node(E item, Node<E> next){
             this.item = item;
@@ -93,7 +93,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
     }
 
     @Override
-    String toString(){
+    public String toString(){
 
         Iterator<E> iterator = iterator();
 
@@ -110,14 +110,13 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
         return toStr;
     }
 
-@SuppressWarnings
-    public void sort () {
-        Object [] array = toArray(); 
-        Arrays.sort(array); 
-        this.clear();
-        for (Object o : array ) { 
+    @SuppressWarnings("")
+    public void sort ( ) {
+        Object [] array = toArray();
+        Arrays.sort(array); this.clear();
+        for (Object o : array ) {
             this.add( (E)o );
-        } 
+        }
     }
 
     public boolean add(E e){
@@ -150,7 +149,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
         Node<E> current = head;
 
         while (current != null) {
-            if (current.equals(movie) == true) {
+            if (current.item.equals(movie) == true) {
                 return true;
             }
 
@@ -161,10 +160,9 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
 
     @Override
     public boolean containsAll(Collection<?> c){
-        Iterator<E> iterator = c.iterator();
-
-        while (iterator.hasNext()) {
-            if (!contains(iterator.next())) {
+    
+        for (Object item: c) {
+            if (!contains(item)) {
                 return false;
             }
         }
@@ -245,16 +243,27 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
     }
 
     public <T> T[] toArray(T[] a) { 
-        T[] array = new T[size()];
 
-        Node<E> current = this.head;
-        int i = 0;
-        while(current != null) {
-            array[i] = current;
-            i = i + 1;
-            current = current.next;
-        }
-        return array;
+        if(a.length < size()) { 
+            
+            Node<E> current = this.head;
+            int i = 0;
+            while(current != null && i < size()) {
+                a[i] = (T)current.item;
+                i = i + 1;
+                current = current.next;
+            }
+            return a;
+        } else {
+            Node<E> current = this.head;
+            int i = 0;
+            while(current != null) {
+                a[i] = (T)current.item;
+                i = i + 1;
+                current = current.next;
+            }
+            return a;
+        }      
     }
 
 }

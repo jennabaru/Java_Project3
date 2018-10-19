@@ -39,7 +39,7 @@ public class MovieList extends LinkedList<Movie> {
             return null;
         }
         //call compareTo to sort results
-        LinkedList.sort();
+        results.sort();
         //return results movielist
         return results;
         
@@ -73,7 +73,7 @@ public class MovieList extends LinkedList<Movie> {
             return null;
         }
         //call compareTo to sort results
-        // JENNA -- Collections.sort();
+        results.sort();
         //return results movielist
         return results;
     }
