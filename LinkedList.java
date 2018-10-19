@@ -130,6 +130,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
         }
         
         Node<E> addNode = new Node<E>(e, head);    
+        head = addNode;
         size = size + 1;
         
         return true;
@@ -168,13 +169,26 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
         return true;
     }
  
-    public boolean equals(Object o){
-        
-        if (this.getClass() == o.getClass() && this == o) {
+    public boolean equals(Object objA){
+
+        if (this.getClass() == objA.getClass() && this == objA) {
             return true;
         }
-        return false;
+
+        LinkedList<?>objB = (LinkedList<?>)objA;
+
+        if (objB.size() != size()) {
+            return false;
+        }
+
+        for (int i = 0; i < size(); i++) {
+            if(objB.get(i).equals(get(i))!= true) {
+                return false;
+            }
+        }
+        return true;
     }
+
     public int hashCode(){
         throw new UnsupportedOperationException("hashCode not supported");
     }
