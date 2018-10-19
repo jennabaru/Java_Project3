@@ -125,9 +125,9 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
             return false;
         }
 
-        if (contains(e)) {
-            return true;
-        }
+        //if (contains(e)) {
+        //    return true;
+        //}
         
         Node<E> addNode = new Node<E>(e, head);    
         head = addNode;
@@ -142,6 +142,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
 
     public void clear(){
         head = null;
+        size = 0;
     }
 
     public boolean contains(Object o){
