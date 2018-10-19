@@ -129,7 +129,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
             return true;
         }
         
-        Node<E> addNode = new Node(e, head);    
+        Node<E> addNode = new Node<E>(e, head);    
         size = size + 1;
         
         return true;
@@ -145,11 +145,10 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
 
     public boolean contains(Object o){
 
-        Movie movie = (Movie)o;
         Node<E> current = head;
 
         while (current != null) {
-            if (current.item.equals(movie) == true) {
+            if (current.item.equals(o) == true) {
                 return true;
             }
 
@@ -170,10 +169,8 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
     }
  
     public boolean equals(Object o){
-
-        LinkedList list = (LinkedList)o;
-
-        if (containsAll(list)== true) {
+        
+        if (this.getClass() == o.getClass() && this == o) {
             return true;
         }
         return false;
@@ -193,9 +190,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
     
     public boolean remove(Object o){
 
-        Movie movie = (Movie)o;
-
-        if (!contains(movie)) {
+        if (!contains(o)) {
             return false;
         }
 
@@ -204,7 +199,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
         Node<E> prev  = null;
 
         while (current != null) {
-            if (movie.equals(current.item)) {
+            if (o.equals(current.item)) {
                 if (prev == null) {
                     head = current.next;
                 } else {
