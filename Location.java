@@ -2,7 +2,7 @@ package project3;
 /**
 * This class creates a location object with a
 * string location and string funFact input.
-* @author Jenna Baruch * @version 10/02/2018
+* @author Jenna Baruch * @version 10/19/2018
 */
 public class Location{
     private String location;

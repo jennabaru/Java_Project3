@@ -1,7 +1,7 @@
 package project3;
 /**
 * This class creates an actor object with a string actor name input.
-* @author Jenna Baruch * @version 10/02/2018
+* @author Jenna Baruch * @version 10/19/2018
 */
 
 public class Actor{

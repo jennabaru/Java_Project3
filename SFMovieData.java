@@ -12,7 +12,7 @@ import java.util.Arrays;
 * This is run on a loop until the user quits the program. This class
 * also opens the file to read in data.
 *
-* @author Jenna Baruch * @version 10/02/2018
+* @author Jenna Baruch * @version 10/19/2018
 */
 public class SFMovieData{
     /**
