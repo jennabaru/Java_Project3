@@ -134,7 +134,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
             while(last.next!=null){
                 last=last.next;
             }
-            Node<E> addNode = new Node<E>(e, head);  
+            Node<E> addNode = new Node<E>(e, null);  
             last.next= addNode;
         }
         size = size + 1;
@@ -253,7 +253,7 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
         Node<E> current = this.head;
         int i = 0;
         while(current != null) {
-            array[i] = current;
+            array[i] = current.item;
             i = i + 1;
             current = current.next;
         }
