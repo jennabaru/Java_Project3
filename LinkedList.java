@@ -125,13 +125,20 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
             return false;
         }
 
-        //if (contains(e)) {
-        //    return true;
-        //}
-        
-        Node<E> addNode = new Node<E>(e, head);    
-        head = addNode;
+        Node<E> last = null;
+        if(head == null){
+            Node<E> addNode = new Node<E>(e, head);   
+            head = addNode;
+        }else{
+            last = head;
+            while(last.next!=null){
+                last=last.next;
+            }
+            Node<E> addNode = new Node<E>(e, head);  
+            last.next= addNode;
+        }
         size = size + 1;
+        
         
         return true;
     }
