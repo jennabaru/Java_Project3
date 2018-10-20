@@ -3,6 +3,7 @@ package project3;
 import java.util.Collection;
 import java.util.NoSuchElementException;
 import java.lang.Iterable;
+import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.lang.IndexOutOfBoundsException;
 import java.util.Arrays;
@@ -264,14 +265,17 @@ public class LinkedList<E> implements Collection<E>, Iterable<E>{
 
         if(a.length < size()) { 
             
+            // creates a new array that is type compatible with the paramater type T
+            T[] biggerA = (T[])Array.newInstance(a.getClass().getComponentType(), size());
+            
             Node<E> current = this.head;
             int i = 0;
             while(current != null && i < size()) {
-                a[i] = (T)current.item;
+                biggerA[i] = (T)current.item;
                 i = i + 1;
                 current = current.next;
             }
-            return a;
+            return biggerA;
         } else {
             Node<E> current = this.head;
             int i = 0;

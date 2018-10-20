@@ -30,7 +30,7 @@ public class MovieList extends LinkedList<Movie> {
 
         int i = 0;
         for (i=0;i<size(); i++) {
-            if (get(i).title.toLowerCase().contains(keyword.toLowerCase())) {
+            if (get(i).title().toLowerCase().contains(keyword.toLowerCase())) {
                 results.add(get(i));
             }
         }
@@ -58,13 +58,13 @@ public class MovieList extends LinkedList<Movie> {
         MovieList results = new MovieList();
         int i = 0;
         for (i=0;i<size(); i++) {
-            if (get(i).actor1 != null && get(i).actor1.name().toLowerCase().contains(keyword.toLowerCase())) {
+            if (get(i).getActor1() != null && get(i).getActor1().name().toLowerCase().contains(keyword.toLowerCase())) {
                 results.add(get(i));
             }
-            if (get(i).actor2 != null && get(i).actor2.name().toLowerCase().contains(keyword.toLowerCase())) {
+            if (get(i).getActor2() != null && get(i).getActor2().name().toLowerCase().contains(keyword.toLowerCase())) {
                 results.add(get(i));
             }
-            if (get(i).actor3 != null && get(i).actor3.name().toLowerCase().contains(keyword.toLowerCase())) {
+            if (get(i).getActor3() != null && get(i).getActor3().name().toLowerCase().contains(keyword.toLowerCase())) {
                 results.add(get(i));
             }
         }

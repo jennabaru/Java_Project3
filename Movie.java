@@ -9,14 +9,14 @@ import java.util.ArrayList;
 * @author Jenna Baruch * @version 10/02/2018
 */
 public class Movie implements Comparable<Movie>{
-    public String title;
-    public int year;
-    public ArrayList<Location> location = new ArrayList<Location>();
-    public String director;
-    public String writer;
-    public Actor actor1;
-    public Actor actor2;
-    public Actor actor3;
+    private String title;
+    private int year;
+    private ArrayList<Location> location = new ArrayList<Location>();
+    private String director;
+    private String writer;
+    private Actor actor1;
+    private Actor actor2;
+    private Actor actor3;
 
 /**
  * This constructor creates a movie object with title and year.
@@ -199,5 +199,23 @@ public class Movie implements Comparable<Movie>{
         } else {
             return -1;
         }
+    }
+
+    public String title() {
+        return title;
+    }
+
+    public int year() {
+        return year;
+    }
+
+    public Actor getActor1() {
+        return actor1;
+    }
+    public Actor getActor2() {
+        return actor2;
+    }
+    public Actor getActor3() {
+        return actor3;
     }
 }

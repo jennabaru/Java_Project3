@@ -5,8 +5,8 @@ package project3;
 * @author Jenna Baruch * @version 10/02/2018
 */
 public class Location{
-    String location;
-    String funFact;
+    private String location;
+    private String funFact;
 
 /**
  * Location class constructor

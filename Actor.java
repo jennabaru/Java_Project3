@@ -5,7 +5,7 @@ package project3;
 */
 
 public class Actor{
-    String actorName;
+    private String actorName;
 /**
  * Actor class constructor
  * @param actorName to be set
